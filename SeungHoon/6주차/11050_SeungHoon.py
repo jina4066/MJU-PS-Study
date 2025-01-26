@@ -1,4 +1,4 @@
-# [BOJ] 이항 계수 1 / Bronze 1 / 20m
+# [BOJ] 이항 계수 1 / Bronze 1 / 20m 
 N, K = map(int,input().split())
 
 numerator = 1
