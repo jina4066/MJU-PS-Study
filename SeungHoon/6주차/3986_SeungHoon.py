@@ -1,4 +1,4 @@
-#[BOJ] 좋은 단어 / Silver 4 / 30m
+#[BOJ] 좋은 단어 / Silver 4 / 30m 
 N = int(input())
 
 count = 0
