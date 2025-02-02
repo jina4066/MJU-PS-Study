@@ -1,4 +1,4 @@
-#[BOJ] 회의실 배정 / Gold 5 / 30m
+#[BOJ] 회의실 배정 / Gold 5 / 30m 
 import sys
 N = int(sys.stdin.readline())
 

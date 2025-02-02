@@ -1,4 +1,4 @@
-# 요세푸스 문제 0 / Silver 4 / 1h
+# [BOJ]요세푸스 문제 0 / Silver 4 / 1h 
 N, K = map(int,input().split())
 
 arr = []

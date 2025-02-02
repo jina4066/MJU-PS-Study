@@ -1,4 +1,4 @@
-# [BOJ] 연결 요소의 개수 / Silver 2 / 1h
+# [BOJ] 연결 요소의 개수 / Silver 2 / 1h 
 import sys
 sys.setrecursionlimit(10**6)
 N, M = map(int,sys.stdin.readline().split())
