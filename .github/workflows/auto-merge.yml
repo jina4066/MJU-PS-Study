@@ -1,0 +1,21 @@
+name: Auto Merge PRs
+
+on:
+  schedule:
+    - cron: '0 0 * * 2'  # 매주 화요일 00:00 UTC = 화요일 09:00 KST
+
+jobs:
+  automerge:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Auto-merge open PRs into main
+        uses: pascalgn/automerge-action@v0.16.3
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          MERGE_METHOD: merge           # squash, merge, rebase 중 선택 가능
+          MERGE_LABELS: ""               # 라벨 조건 없음 → 모두 머지 대상
+          MERGE_REMOVE_LABELS: ""        # 병합 후 제거할 라벨 없음
+          MERGE_FORKS: true              # 포크된 PR도 허용
+          MERGE_COMMIT_MESSAGE: pull-request-title
+          MERGE_DELETE_BRANCH: false     # << 브랜치 삭제 금지!!
