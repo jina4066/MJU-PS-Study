@@ -13,7 +13,7 @@ jobs:
         uses: pascalgn/automerge-action@v0.16.3
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          MERGE_METHOD: squash           # squash, merge, rebase 중 선택 가능
+          MERGE_METHOD: merge           # squash, merge, rebase 중 선택 가능
           MERGE_LABELS: ""               # 라벨 조건 없음 → 모두 머지 대상
           MERGE_REMOVE_LABELS: ""        # 병합 후 제거할 라벨 없음
           MERGE_FORKS: true              # 포크된 PR도 허용
