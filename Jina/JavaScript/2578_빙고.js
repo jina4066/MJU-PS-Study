@@ -2,7 +2,7 @@ const fs = require("fs");
 const inputFilePath =
   process.platform === "linux" ? "/dev/stdin" : "./input.txt";
 const input = fs
-  .readFileSync(inputFilePath, "utf-8")
+  .readFileSync("/dev/stdin")
   .trim()
   .split("\n")
   .map((line) => line.split(" ").map(Number));
