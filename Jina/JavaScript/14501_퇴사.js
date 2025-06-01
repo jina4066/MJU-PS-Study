@@ -1,28 +1,18 @@
-const input = require("fs")
-  .readFileSync("/dev/stdin")
-  .toString()
-  .trim()
-  .split("\n");
-const N = +input.shift();
-const payChart = input.map((info) => info.split(" ").map((val) => +val));
+const fs = require("fs");
+const input = fs.readFileSync("/dev/stdin").toString().trim().split("\n");
 
-const getMaxPay = () => {
-  let max = -Infinity;
+const N = +input[0];
+// [상담에 걸리는 일수, 받을 수 있는 돈]
+const ls = input.slice(1).map((line) => line.split(" ").map(Number));
+const dp = Array(N + 1).fill(0);
 
-  const dfs = (idx, total) => {
-    max = Math.max(max, total);
+for (let i = N - 1; i >= 0; i--) {
+  const [time, pay] = ls[i];
+  if (i + time > N) {
+    dp[i] = dp[i + 1];
+  } else {
+    dp[i] = Math.max(dp[i + 1], pay + dp[i + time]);
+  }
+}
 
-    for (let i = idx; i < N; i++) {
-      const [time, pay] = payChart[i];
-      const nextWorkDay = i + time;
-
-      dfs(nextWorkDay, nextWorkDay > N ? total : total + pay);
-    }
-
-    return max;
-  };
-
-  return dfs(0, 0);
-};
-
-console.log(getMaxPay());
+console.log(dp[0]);
